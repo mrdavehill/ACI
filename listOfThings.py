@@ -1,33 +1,35 @@
-
-
-
 #python 3
-#
-#
 
 """
 
-It's the listOfThings for the Lab APIC
+The APIC naming conventions in my company were designed to be globally uniformed and this script will need to be updated to match your standards
 
-Created 25/04/2019
+Tenant - tnt_{environment}_baremetal_prod
 
-Updated 14/07/2020
+epg - epg_{vlan}_core_(subnet}
+
+BD - bd_core_{subnet}
+
+The Vlan and subnet variables are input() in the script
 
 """
-
-
 
 import pyfiglet
 
 banner = pyfiglet.figlet_format("Lab L2 Vlan Builder")
 
 #Add the FQDN of the APIC as the host string below
-
 host = ''
 
-environment = 'lab'
+#country code or 'lab'
+environment = ''
 
-vrf = 'ctx-vrf_uslab_core'
+#vrf name
+vrf = ''
+
+#these are the interfaces you would normally statically pin to the BD
+#update them so they match your vPCs etc
+#ipdate the domain in 'fvRsDomAtt'
   
 borderLeafInterfaces = [{'fvRsPathAtt': {'attributes': {'encap': '', 'tDn': 'topology/pod-1/paths-202/pathep-[eth1/35]'}}},
 {'fvRsPathAtt': {'attributes': {'encap': '', 'tDn': 'topology/pod-1/paths-202/pathep-[eth1/33]'}}},
