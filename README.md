@@ -14,7 +14,9 @@ Clone this repo
 
 Update credentials.py file with username and password
 
-Update listOfThings.py with device names and switchports
+Update the environment, host and vrf varibales in listOfThings.py
+
+Update the BD, EPG, Domain and tenants so they match your naming conventions in APICImport.py
 
 Run APICImporter.py
 
