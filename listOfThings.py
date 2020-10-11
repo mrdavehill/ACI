@@ -28,7 +28,7 @@ vlanPool = 'Vlan_Pool_Core'
 aep = 'AEP_Core'
 
 #Physical domain
-domain = 'Domain_Core
+domain = 'Domain_Core'
 
 #country code or 'lab'
 environment = ''
