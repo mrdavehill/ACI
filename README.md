@@ -6,7 +6,7 @@ Cisco ACI automation
 
 Creates EPGs, BDs, Vlan pools and POSTs them onto the APICs REST API as JSON. 
 
-![Here be screengrab]()
+![Here be screengrab](https://github.com/mrdavehill/ACI---Add-BD-EPG-and-Vlan-Pool/blob/main/ACI-APIC-Automation.png)
  
 ## Use Case Description
 
