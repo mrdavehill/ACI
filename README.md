@@ -1,5 +1,7 @@
 # ACI---Add-BD-EPG-and-Vlan-Pool
 
+Not working atm - I'm fixing it up so it works on a Cisco Devnet Sandbox.
+
 Cisco ACI automation
 
 Creates EPGs, BDs, Vlan pools and POSTs them onto the APICs REST API as JSON. 
@@ -14,7 +16,7 @@ The configs for each BD/EPG were pretty much the same so I created a script to s
 
 ## Installation
 
-Clone to your machine, update credentials.py, run APICSnapshot.py.
+Clone to your machine, update credentials.py and listOfThings.py so it matches your environment.
 
 ## Configuration
 
@@ -25,6 +27,8 @@ It's currently set up to use a Cisco Devnet sandbox but you can change that to s
 host = 'https://sandboxapicdc.cisco.com'
 username = 'admin'
 password = 'ciscopsdt'
+
+Then start on the listOfThings.py
 
 ## Usage
 
