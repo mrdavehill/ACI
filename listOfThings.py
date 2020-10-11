@@ -19,7 +19,16 @@ import pyfiglet
 banner = pyfiglet.figlet_format("Lab L2 Vlan Builder")
 
 #Add the FQDN of the APIC as the host string below
-host = ''
+host = 'sandboxapicdc.cisco.com'
+
+#Vlan pool
+vlanPool = 'Vlan_Pool_Core'
+
+#AEP
+aep = 'AEP_Core'
+
+#Physical domain
+domain = 'Domain_Core
 
 #country code or 'lab'
 environment = ''
