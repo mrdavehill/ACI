@@ -1,20 +1,16 @@
-# ACI--Create-Config-Rollback
+# ACI---Add-BD-EPG-and-Vlan-Pool
 
 Cisco ACI automation
 
-Creates EPGs, BDs, Vlan pools and adds them to
+Creates EPGs, BDs, Vlan pools and POSTs them onto the APICs REST API as JSON. 
 
 ![Here be screengrab]()
  
 ## Use Case Description
 
-Dev.
+I needed to create multiple Bridge Domains and End Point Groups in ACI for temporary bridges into legacy NXOS as we moved our VM estate.
 
-Test code and easily back any changes out. Update, rinse, repeat.
-
-Prod.
-
-Create a rollback as a first step in any script and reference the change record number. CAB will love you.
+The configs for each BD/EPG were pretty much the same so I created a script to save some clicking.
 
 ## Installation
 
