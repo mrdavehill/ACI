@@ -14,6 +14,8 @@ I needed to create multiple Bridge Domains and End Point Groups in ACI for tempo
 
 The configs for each BD/EPG were pretty much the same so I created a script to save some clicking.
 
+![Here be mo screengrab](https://github.com/mrdavehill/ACI---Add-BD-EPG-and-Vlan-Pool/blob/main/APIC-Sreenshot.png)
+
 ## Installation
 
 Clone to your machine, update credentials.py and listOfThings.py so it matches your environment.
@@ -42,7 +44,13 @@ It really does work; amaze!
 
 ## How to test the software
 
-See Sandbox ^.
+You may need to create the objects below on the sandbox, check and see if they're still there.
+
+AEP - AEP_Core
+Vlan Pool - Vlan_Pool_Cpre
+Domain - Domain_Core
+
+I've used the common tenant. You wouldn't do that in Prod but as the config on this APIC is a moving target I'll take whatever stability I can get.
 
 ## Known issues
 
