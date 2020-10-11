@@ -29,10 +29,20 @@ Get into that credentials.py file and add your details to the host, username and
 It's currently set up to use a Cisco Devnet sandbox but you can change that to suit your environment.
 
 host = 'https://sandboxapicdc.cisco.com'
+
 username = 'admin'
+
 password = 'ciscopsdt'
 
 Then start on the listOfThings.py
+
+This is also set up for the sandbox
+
+host = 'sandboxapicdc.cisco.com'
+
+domain = 'Domain_Core'
+
+environment = 'common'
 
 ## Usage
 
@@ -59,6 +69,8 @@ I've used the common tenant. You wouldn't do that in Prod but as the config on t
 ## Known issues
 
 The credentials file doesn't fit best practices for hiding your username and password. I am truly sorry for this.
+
+I could have used 'tenant' instead of 'environment' to clearer.
 
 ## Getting help
 
