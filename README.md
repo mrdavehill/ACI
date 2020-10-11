@@ -1,7 +1,5 @@
 # ACI---Add-BD-EPG-and-Vlan-Pool
 
-Not working atm - I'm fixing it up so it works on a Cisco Devnet Sandbox.
-
 Cisco ACI automation
 
 Creates EPGs, BDs, Vlan pools and POSTs them onto the APICs REST API as JSON. 
