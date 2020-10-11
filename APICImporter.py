@@ -1,9 +1,6 @@
 #python 3
-#
-#
 
 """
-
 This script automates importing Vlans over a brdige from legacy into ACI
 
 It...
@@ -20,8 +17,7 @@ Requires separate listOfThings.py file with APIC specific variables
 
 Created 04/04/2019
 
-Latest version 26/04/2019
-
+Latest version 11/10/2019
 """
 
 import requests
@@ -37,10 +33,26 @@ from listOfThings import environment
 from listOfThings import vrf
 from listOfThings import borderLeafInterfaces
 from listOfThings import banner
+#import confirm
 
-from confirm import confirm
-
-
+def confirm(prompt=None, resp=False):
+    if prompt is None:
+        prompt = '\nProceed?'
+    if resp:
+        prompt = '%s [%s]|%s: ' % (prompt, 'y', 'n')
+    else:
+        prompt = '%s [%s]|%s: ' % (prompt, 'n', 'y')
+    while True:
+        ans = input(prompt)
+        if not ans:
+            return resp
+        if ans not in ['y', 'Y', 'n', 'N']:
+            print('please enter y or n.')
+            continue
+        if ans == 'y' or ans == 'Y':
+            return True
+        if ans == 'n' or ans == 'N':
+            quit()
 
 def get_cookies(apic):
     url = apic + '/api/aaaLogin.json'
@@ -78,7 +90,7 @@ def create_snapshot(apic, cookies):
         quit()
         
 def create_vlans(apic, cookies):
-    url = '{0}/api/node/mo/uni/infra/vlanns-[pool_bd_core]-static/from-[vlan-{1}]-to-[vlan-{2}].json'.format(apic, firstVlan, lastVlan)
+    url = '{0}/api/node/mo/uni/infra/vlanns-[Vlan_Pool_Core]-static/from-[vlan-{1}]-to-[vlan-{2}].json'.format(apic, firstVlan, lastVlan)
     payload = {
 	'fvnsEncapBlk': {
 		'attributes': {
@@ -89,7 +101,7 @@ def create_vlans(apic, cookies):
 		}
 	}
 }
-    payload ['fvnsEncapBlk']['attributes']['dn'] = 'uni/infra/vlanns-[pool_bd_core]-static/from-[vlan-{1}]-to-[vlan-{2}]'.format(apic, firstVlan, lastVlan)
+    payload ['fvnsEncapBlk']['attributes']['dn'] = 'uni/infra/vlanns-[Vlan_Pool_Core]-static/from-[vlan-{1}]-to-[vlan-{2}]'.format(apic, firstVlan, lastVlan)
     payload ['fvnsEncapBlk']['attributes']['from'] = 'vlan-{0}'.format(firstVlan)
     payload ['fvnsEncapBlk']['attributes']['to'] = 'vlan-{0}'.format(lastVlan)
     print('\nCheck the Vlan Pool URL and JSON for Vlans {0} to {1}: \n'.format(firstVlan, lastVlan))
@@ -130,8 +142,8 @@ def create_bds(apic):
 }   
     bdList = len(subnetList)   
     for i in range(bdList):
-        url = '{0}/api/node/mo/uni/tn-tnt_{1}_baremetal_prod/BD-bd_core_{2}.json'.format(apic, environment, subnetList[i]) 
-        payload['fvBD']['attributes']['dn'] = 'uni/tn-tnt_{0}_baremetal_prod/BD-bd_core_{1}'.format(environment, subnetList[i])
+        url = '{0}/api/node/mo/uni/tn-{1}/BD-bd_core_{2}.json'.format(apic, environment, subnetList[i]) 
+        payload['fvBD']['attributes']['dn'] = 'uni/tn-{0}/BD-bd_core_{1}'.format(environment, subnetList[i])
         payload['fvBD']['attributes']['name'] = 'bd_core_{0}'.format(subnetList[i])
         payload['fvBD']['children'][0]['fvRsCtx']['attributes']['tnFvCtxName'] = vrf
         print('\nCheck the Bridge Domain URL and JSON for {0}: \n'.format(subnetList[i]))
@@ -157,7 +169,7 @@ def create_epgs(apic):
             borderLeafInterfaces[vlan]['fvRsPathAtt']['attributes']['encap'] = 'vlan-{0}'.format(vlanList[i])
         borderLeafInterfaces[-1]['fvRsBd']['attributes']['tnFvBDName'] = 'bd_core_{0}'.format(subnetList[i])
         epgnames = 'epg_{0}_core_{1}'.format(vlanList[i], subnetList[i])
-        epgdns = 'uni/tn-tnt_{0}_baremetal_prod/ap-app_profile_baremetal_prod/epg-{1}'.format(environment, epgnames)
+        epgdns = 'uni/tn-{0}/ap-default/epg-{1}'.format(environment, epgnames)
         url = '{0}/api/node/mo/{1}.json'.format(apic, epgdns)
         payload = {
 	'fvAEPg': {
