@@ -36,7 +36,7 @@ Then start on the listOfThings.py
 
 ## Usage
 
-There's an example of this script in one of my projects that [creates EPGs, BDs and Vlan pools.](https://github.com/mrdavehill/ACI---Add-BD-EPG-and-Vlan-Pool/blob/main/APICImporter.py)
+VM migrations over a layer 2 bridge.
 
 ### DevNet Sandbox
 
@@ -49,7 +49,9 @@ It really does work; amaze!
 You may need to create the objects below on the sandbox, check and see if they're still there.
 
 AEP - AEP_Core
+
 Vlan Pool - Vlan_Pool_Cpre
+
 Domain - Domain_Core
 
 I've used the common tenant. You wouldn't do that in Prod but as the config on this APIC is a moving target I'll take whatever stability I can get.
