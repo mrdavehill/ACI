@@ -52,7 +52,7 @@ It really does work; amaze!
 
 ## How to test the software
 
-You may need to create the objects below on the sandbox, check and see if they're still there.
+You need the objects below on the sandbox, I added them but maybe you should check and see if they're still there.
 
 AEP - AEP_Core
 
