@@ -82,3 +82,6 @@ This project was written and is maintained by the following individuals:
 
 * Dave Hill <dave@davehill.org>
 
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/mrdavehill/ACI---Add-BD-EPG-and-Vlan-Pool)
+
+
