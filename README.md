@@ -10,6 +10,8 @@ Creates EPGs, BDs, Vlan pools and POSTs them onto the APICs REST API as JSON.
 
 I needed to create multiple Bridge Domains and End Point Groups in ACI for temporary bridges into legacy NXOS as we moved our VM estate.
 
+There's no gateway config - we left out gateways in legacy during the migration.
+
 The configs for each BD/EPG were pretty much the same so I created a script to save some clicking.
 
 ![Here be mo screengrab](https://github.com/mrdavehill/ACI---Add-BD-EPG-and-Vlan-Pool/blob/main/APIC-Sreenshot.png)
