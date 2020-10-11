@@ -1,7 +1,9 @@
+#python 3
+
 """
-Your creds here buddy
+Your creds in here buddy
 """
 
-
-username = ''
-password = ''
+#host = 'https://sandboxapicdc.cisco.com'
+username = 'admin'
+password = 'ciscopsdt'
