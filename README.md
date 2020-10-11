@@ -26,8 +26,6 @@ Get into that credentials.py file and add your details to the host, username and
 
 It's currently set up to use a Cisco Devnet sandbox but you can change that to suit your environment.
 
-host = 'https://sandboxapicdc.cisco.com'
-
 username = 'admin'
 
 password = 'ciscopsdt'
