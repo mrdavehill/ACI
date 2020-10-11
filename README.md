@@ -14,6 +14,8 @@ There's no gateway config - we left out gateways in legacy during the migration.
 
 The configs for each BD/EPG were pretty much the same so I created a script to save some clicking.
 
+The screengrab below is the completed config on a Devnet APIC run from this script. I know, right?
+
 ![Here be mo screengrab](https://github.com/mrdavehill/ACI---Add-BD-EPG-and-Vlan-Pool/blob/main/APIC-Sreenshot.png)
 
 ## Installation
