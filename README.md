@@ -1,5 +1,9 @@
 # ACI---Add-BD-EPG-and-Vlan-Pool
 
+Updated to run from a container, run this command: 
+
+docker run -it -v ~/ACI---Add-BD-EPG-and-Vlan-Pool:/code aci python /code/APICImporter.py
+
 Cisco ACI automation
 
 Creates EPGs, BDs, Vlan pools and POSTs them into the APICs REST API using JSON. 
