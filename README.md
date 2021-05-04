@@ -52,11 +52,11 @@ It really does work; amaze!
 
 ## How to test the software
 
-You need the objects below on the sandbox, I added them but maybe you should check and see if they're still there.
+You need the objects below on the sandbox, creat them using this bit of Terraform: https://github.com/mrdavehill/-Terraform-ACI--Domain-AAEP-VlanPool.
 
 AEP - AEP_Core
 
-Vlan Pool - Vlan_Pool_Cpre
+Vlan Pool - Vlan_Pool_Core
 
 Domain - Domain_Core
 
